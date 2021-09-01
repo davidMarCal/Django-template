@@ -13,4 +13,14 @@ pipenv install django
 pipenv shell
 python manage.py runserver
 ```
+# Additional
+May be necessary to change interpreter to the one in our environmet.
 
+```bash
+pipenv --venv
+```
+Copy the result url and paste in:
+
+- VS Code: View -> Command Palette ->Python: Select interpreter -> Enter interpreter path -> url/bin/python
+
+ 
