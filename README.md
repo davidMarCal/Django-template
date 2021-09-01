@@ -23,4 +23,12 @@ Copy the result url and paste in:
 
 - VS Code: View -> Command Palette ->Python: Select interpreter -> Enter interpreter path -> url/bin/python
 
+Django debug toolbar
+
+```bash
+pipenv install django-debug-toolbar
+```
+Follow: 
+
+https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
  
