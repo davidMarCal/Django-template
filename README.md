@@ -11,6 +11,3 @@ pipenv install django
 pipenv shell
 python manage.py runserver
 ```
-```bash
-pipenv shell
-python manage.py runserver
