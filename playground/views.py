@@ -13,3 +13,9 @@ def say_hello(request):
     y=2
     z=x+1
     return render(request,'hello.html',{'name':'User'})
+
+def show_index(request):
+    return render(request,'index.html')
+
+def show_news_detail(request):
+    return render(request,'news-detail.html')
