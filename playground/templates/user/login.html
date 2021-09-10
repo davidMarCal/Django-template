@@ -1,0 +1,36 @@
+{% extends 'fragments/base_layout.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+    <section class=" contact section-padding" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-12 mx-auto">
+                    <h2 class="mb-4 text-center" data-aos="fade-up">Login</h2>
+                    <form action="/playground/user/signIn"  method="post" class="contact-form" role="form" data-aos="fade-up">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="mb-4 text-center mx-auto">
+                                <label for="username" class="form-label">Name</sup></label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-4 text-center mx-auto">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder=Password required>
+                        </div>
+                        <div class="col-lg-5 col-12 mx-auto mt-5">
+                            <button type="submit" class="form-control">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+{% endblock %}
+
