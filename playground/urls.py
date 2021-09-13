@@ -14,5 +14,6 @@ urlpatterns=[
     #POST
     path('user/signUp',views.signUp),
     path('user/signIn',views.signIn),
+    path('loadData',views.loadData),
     
 ]
