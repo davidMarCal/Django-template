@@ -1,3 +1,4 @@
+from playground.models import Person
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -31,8 +32,20 @@ def show_register(request):
 
 @login_required(login_url='/playground/user/login/')
 def show_news_detail(request):
-    return render(request,'news-detail.html')
+    person=Person.objects.get_person(request.user)
+    return render(request,'news-detail.html',{'person':person})
 
+@login_required(login_url='/playground/user/login/')
+def loadData(request):
+    first_name=(str(request.POST["name"]))
+    last_name=(str(request.POST["last_name"]))
+    person=Person.objects.get_person(user=request.user)
+    if(person):
+        person=Person.objects.update_person(user=request.user,first_name=first_name,last_name=last_name)
+    else:
+        person=Person.objects.create_person(user=request.user,first_name=first_name,last_name=last_name)
+        person.save()
+    return redirect('news-detail/')
 #
 # Users 
 #
