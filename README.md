@@ -13,6 +13,8 @@ pipenv install django
 pipenv shell
 python manage.py runserver
 ```
+Enter http://localhost:8000/playground/index/ ot access the main page
+
 # Additional
 May be necessary to change interpreter to the one in our environmet.
 
