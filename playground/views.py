@@ -32,14 +32,22 @@ def show_register(request):
 
 @login_required(login_url='/playground/user/login/')
 def show_news_detail(request):
-    person=Person.objects.get_person(request.user)
-    return render(request,'news-detail.html',{'person':person})
+
+    try:
+        person=Person.objects.get_person(request.user)
+        return render(request,'news-detail.html',{'person':person})
+    except:
+        print("No user data registered")
+        return render(request,'news-detail.html',{'person':""})
 
 @login_required(login_url='/playground/user/login/')
 def loadData(request):
     first_name=(str(request.POST["name"]))
     last_name=(str(request.POST["last_name"]))
-    person=Person.objects.get_person(user=request.user)
+    try:
+        person=Person.objects.get_person(user=request.user)
+    except:
+        person=""
     if(person):
         person=Person.objects.update_person(user=request.user,first_name=first_name,last_name=last_name)
     else:
