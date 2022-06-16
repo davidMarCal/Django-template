@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-#URLConf
+#URLConfig
 urlpatterns=[
     #GET
     path('hello/',views.say_hello),
